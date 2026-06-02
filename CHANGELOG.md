@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/naKarthikSurya/Talos/compare/v1.0.0...v1.1.0) (2026-06-02)
+
+
+### Features
+
+* add IDE Artifact Protocol to templates and automate local agent directory exclusions in init script ([89551e2](https://github.com/naKarthikSurya/Talos/commit/89551e2e902ab8b4a0a968754e75c0613c830148))
+* integrate Obsidian adapter and update antigravity configuration for enhanced project context mapping ([f1a300f](https://github.com/naKarthikSurya/Talos/commit/f1a300f885b958092706bd6759308478353efbcf))
+
 ## 1.0.0 (2026-05-03)
 
 
