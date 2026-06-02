@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { allAdapters, Target, TalosContext, OutputFile } from '../adapters/index.js';
+import { injectMcpConfig } from '../mcp/configInjector.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,7 +83,7 @@ export async function initCommand(args: string[]) {
 
   // 3. Automatically add local agent directories to Git local exclude
   const gitDir = path.join(context.projectRoot, '.git');
-  if (fs.existsSync(gitDir)) {
+  if (fs.existsSync(gitDir) && fs.statSync(gitDir).isDirectory()) {
     const excludePath = path.join(gitDir, 'info', 'exclude');
     const excludeDir = path.dirname(excludePath);
 
@@ -105,6 +106,9 @@ export async function initCommand(args: string[]) {
       fs.appendFileSync(excludePath, appendStr);
     }
   }
+
+  // 4. Automatically inject universal MCP server configurations
+  injectMcpConfig(context.projectRoot, packageRoot);
 
   console.log('\n✅ Talos initialized successfully!');
   console.log('Next: Update .talos/state.yaml with your project stack and task description.');
