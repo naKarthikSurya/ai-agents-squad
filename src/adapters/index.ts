@@ -7,6 +7,7 @@ export type Target =
   | 'cline'
   | 'aider'
   | 'windsurf'
+  | 'obsidian'
   | 'all';
 
 export interface TalosContext {
@@ -37,6 +38,7 @@ import { clineAdapter } from './cline.js';
 import { aiderAdapter } from './aider.js';
 import { windsurfAdapter } from './windsurf.js';
 import { antigravityAdapter } from './antigravity.js';
+import { obsidianAdapter } from './obsidian.js';
 
 export const allAdapters: Adapter[] = [
   codexAdapter,
@@ -46,5 +48,6 @@ export const allAdapters: Adapter[] = [
   clineAdapter,
   aiderAdapter,
   windsurfAdapter,
-  antigravityAdapter
+  antigravityAdapter,
+  obsidianAdapter
 ];

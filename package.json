@@ -1,6 +1,6 @@
 {
   "name": "@nakarthiksurya/talos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Universal AI coding agent workspace protocol for Claude Code, Codex, Gemini CLI, Cursor, Cline, Aider, and Antigravity.",
   "type": "module",
   "bin": {

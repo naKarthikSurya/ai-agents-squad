@@ -6,6 +6,7 @@ import { clineAdapter } from './cline.js';
 import { aiderAdapter } from './aider.js';
 import { windsurfAdapter } from './windsurf.js';
 import { antigravityAdapter } from './antigravity.js';
+import { obsidianAdapter } from './obsidian.js';
 export const allAdapters = [
     codexAdapter,
     claudeAdapter,
@@ -14,5 +15,6 @@ export const allAdapters = [
     clineAdapter,
     aiderAdapter,
     windsurfAdapter,
-    antigravityAdapter
+    antigravityAdapter,
+    obsidianAdapter
 ];

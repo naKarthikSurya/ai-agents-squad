@@ -38,12 +38,18 @@ export async function doctorCommand() {
         console.log('✓ CLAUDE.md generated');
     if (fs.existsSync(path.join(projectRoot, 'GEMINI.md')))
         console.log('✓ GEMINI.md generated');
+    if (fs.existsSync(path.join(projectRoot, '.gemini/settings.json')))
+        console.log('✓ .gemini/settings.json generated');
     if (fs.existsSync(path.join(projectRoot, '.cursor/rules/talos-core.mdc')))
         console.log('✓ .cursor/rules/talos-core.mdc generated');
     if (fs.existsSync(path.join(projectRoot, '.clinerules/talos-core.md')))
         console.log('✓ .clinerules/talos-core.md generated');
     if (fs.existsSync(path.join(projectRoot, 'CONVENTIONS.md')))
         console.log('✓ CONVENTIONS.md generated');
+    if (fs.existsSync(path.join(projectRoot, '.talos/context.md')))
+        console.log('✓ .talos/context.md generated');
+    if (fs.existsSync(path.join(projectRoot, '.talos/knowledge-vault/Welcome to Talos.md')))
+        console.log('✓ Obsidian Knowledge Vault initialized');
     if (fs.existsSync(path.join(projectRoot, '.cursorrules'))) {
         console.warn('⚠ .cursorrules is legacy in Cursor. Prefer .cursor/rules/*.mdc.');
         warnings++;

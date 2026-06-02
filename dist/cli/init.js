@@ -34,11 +34,14 @@ export async function initCommand(args) {
     }
     // 2. Execute relevant adapters
     let adaptersToRun = allAdapters;
-    if (target !== 'all' && target !== 'antigravity') {
+    if (target !== 'all' && target !== 'antigravity' && target !== 'obsidian') {
         adaptersToRun = allAdapters.filter(a => a.name === target);
     }
     else if (target === 'antigravity') {
-        adaptersToRun = allAdapters.filter(a => a.name === 'antigravity');
+        adaptersToRun = allAdapters.filter(a => a.name === 'antigravity' || a.name === 'obsidian');
+    }
+    else if (target === 'obsidian') {
+        adaptersToRun = allAdapters.filter(a => a.name === 'obsidian');
     }
     if (adaptersToRun.length === 0) {
         console.error(`Unknown target: ${target}`);

@@ -17,6 +17,9 @@ export async function detectCommand() {
   const hasSrc = fs.existsSync(path.join(projectRoot, 'src'));
   if (hasSrc) console.log('✓ src/');
 
+  const hasGemini = fs.existsSync(path.join(projectRoot, '.gemini'));
+  if (hasGemini) console.log('✓ .gemini/ configuration');
+
   if (!fs.existsSync(path.join(projectRoot, 'CLAUDE.md'))) console.log('✓ no CLAUDE.md');
   if (!fs.existsSync(path.join(projectRoot, 'AGENTS.md'))) console.log('✓ no AGENTS.md');
   if (!fs.existsSync(path.join(projectRoot, 'GEMINI.md'))) console.log('✓ no GEMINI.md');
@@ -26,6 +29,8 @@ export async function detectCommand() {
   console.log('- claude');
   console.log('- gemini');
   console.log('- cursor');
+  console.log('- antigravity');
+  console.log('- obsidian');
 
   console.log('\nRun `talos init --target all` to apply all recommended configurations.');
 }
